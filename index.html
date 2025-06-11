@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вакансии для дизайнеров</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Подключаем Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ШАПКА -->
+    <header class="site-header">
+      <div class="site-header-left">
+        <img src="logos/logo.svg" alt="МЭТЧ" class="header-logo" />
+        <div class="header-description">
+          <p class="desc-title">все вакансии отбираю<br />вручную</p>
+        </div>
+      </div>
+      <div class="site-header-right">
+        <button class="add-vacancy-button">Разместить вакансию</button>
+        <button class="bell-button">
+            <img src="logos/bell.svg" alt="Уведомления" class="bell-icon" />
+          </button>
+      </div>
+    </header>
+
+    <!-- ЗАГОЛОВОК -->
+    <h1>Вакансии для дизайнеров</h1>
+
+    <!-- СПИСОК ВАКАНСИЙ -->
+    <div id="vacancies-list"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
