@@ -1,1 +1,4 @@
 .DS_Store
+gas_data.json
+*.env
+__pycache__/
