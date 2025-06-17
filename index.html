@@ -28,29 +28,77 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){
+          (m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+          k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(102624640, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/102624640" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   </head>
+
   <body>
-    <!-- ШАПКА -->
-    <header class="site-header">
-      <div class="site-header-left">
-        <img src="logos/logo.svg" alt="МЭТЧ" class="header-logo" />
-        <div class="header-description">
-          <p class="desc-title">все вакансии отбираю<br />вручную</p>
-        </div>
-      </div>
-      <div class="site-header-right">
-        <button class="add-vacancy-button">Разместить вакансию</button>
-        <button class="bell-button">
-            <img src="logos/bell.svg" alt="Уведомления" class="bell-icon" />
-          </button>
-      </div>
-    </header>
+      <div class="page-wrapper">
+        <!-- ШАПКА -->
+        <header class="site-header">
+          <div class="site-header-left">
+            <img src="logos/logo.svg" alt="МЭТЧ" class="header-logo" />
+            <div class="header-description">
+              <p class="desc-title">все вакансии отбираю<br />вручную</p>
+            </div>
+          </div>
+          <div class="site-header-right">
+            <button class="add-vacancy-button" onclick="window.open('https://tally.so/r/3yrXo8', '_blank')">
+              Разместить вакансию
+            </button>
+            <div class="tooltip-container">
+              <button class="bell-button">
+                <img src="logos/bell.svg" alt="Уведомления" class="bell-icon" />
+              </button>
+              <div class="tooltip-new">
+                Обновлений пока нет.<br />
+                В будущем здесь будут важные новости по сайту.
+              </div>
+            </div>
+            <button class="burger-button" onclick="toggleMenu()">☰</button>
+          </div>
+        </header>
 
-    <!-- ЗАГОЛОВОК -->
-    <h1>Вакансии для дизайнеров</h1>
+        <!-- МОБИЛЬНОЕ МЕНЮ -->
+        <nav id="mobile-menu" class="mobile-menu hidden">
+          <ul>
+            <li><a href="https://tally.so/r/3yrXo8" target="_blank">Разместить вакансию</a></li>
+            <li><a href="#">Обновления</a></li>
+          </ul>
+        </nav>  
 
-    <!-- СПИСОК ВАКАНСИЙ -->
-    <div id="vacancies-list"></div>
+        <!-- ОВЕРЛЕЙ -->
+        <div id="overlay" class="overlay hidden"></div>
+
+        <!-- ЗАГОЛОВОК -->
+        <h1>Вакансии для дизайнеров</h1>
+
+        <!-- СПИСОК ВАКАНСИЙ -->
+        <div id="vacancies-list" class="vacancies-list"></div>
+      </div> <!-- /page-wrapper -->
+
+      <!-- ФУТЕР -->
+      <footer class="footer">
+        <p class="footer-made">©2025 🇰🇿Сделано в Алмате</p>
+        <a class="footer-support" href="https://t.me/dmvdsgn" target="_blank">Предложить улучшение 🦄</a>
+      </footer>
+
+    </div> <!-- /site-container -->
 
     <script src="main.js"></script>
   </body>
