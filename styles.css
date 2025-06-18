@@ -1,9 +1,17 @@
 body {
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   font-family: 'Inter', sans-serif;
   background: #EDEDED;
-  padding: 40px;
+}
+
+.page-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.site-header {
+  margin: 40px 0 24px 0;
 }
 
 h1 {
@@ -161,7 +169,7 @@ h1 {
 .site-header-right {
   position: relative;
   overflow: visible;
-  z-index: 10;
+  z-index: 1002;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -230,14 +238,21 @@ html, body {
 }
 
 .footer {
-  margin-top: auto;
   background: transparent;
   color: #a3a3a3;
+  padding: 24px 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 17px;
-  font-weight: 600;
+  flex-direction: row;
 }
 
 .footer a {
@@ -248,14 +263,14 @@ html, body {
 /* ===== БУРГЕР-МЕНЮ ===== */
 .mobile-menu {
   position: absolute; /* фиксируй относительно родителя */
-  top: 96px; /* ниже шапки */
+  top: 104px; /* ниже шапки */
   left: 20px;
   right: 20px;
   z-index: 1001; /* поверх остального */
   background: white;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -328,10 +343,25 @@ html, body {
   opacity: 1;
 }
 
+.tooltip-container.show-tooltip .tooltip-new {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* ===== АДАПТИВ ДЛЯ МОБИЛКИ (до 768px) ===== */
 @media (max-width: 768px) {
-  body {
-    padding: 16px 20px;
+  .page-wrapper {
+    padding: 0 20px;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 12px;
+
   }
 
   .tooltip-new {
@@ -339,7 +369,7 @@ html, body {
     top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
-}
+  }
 
   .vacancy-card {
     flex-direction: column;
@@ -410,3 +440,9 @@ html, body {
   .overlay.hidden {
     display: none;
   }
+
+  html, body {
+    overflow-x: hidden;
+    height: 100%;
+  }
+}
