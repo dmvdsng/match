@@ -1,0 +1,46 @@
+/* base.css — базовые стили */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #EDEDED;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.page-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+h1 {
+  margin-top: 32px;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#vacancies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}

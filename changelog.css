@@ -1,0 +1,82 @@
+/* changelog.css */
+
+/* Фон под модалкой */
+.updates-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Содержимое модалки */
+  .updates-modal-inner {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 560px;
+    padding: 24px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Кнопка закрытия */
+  .modal-close {
+    height: 50px;
+    margin-top: 24px;
+    width: 100%;
+    padding: 0 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .modal-close:hover {
+    background: #e4e4e4;
+  }
+  
+  /* Список обновлений */
+  #updates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .update-item {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .update-date {
+    font-size: 14px;
+    color: #999999;
+  }
+  
+  .update-version {
+    font-weight: 700;
+    color: #333333;
+  }
+  
+  .update-desc {
+    white-space: pre-line;
+    word-wrap: break-word;
+    color: #1c1c1c;
+  }
+  
+  /* Скрытие модалки */
+  .hidden {
+    display: none;
+  }

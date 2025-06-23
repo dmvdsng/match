@@ -1,19 +1,25 @@
 <a href="{{link}}" class="vacancy-link" target="_blank">
   <div class="vacancy-card">
-    <!-- Левая часть -->
-    <div class="vacancy-left">
-      {{logoOrInitial}}
-      <div class="vacancy-info">
-        <div class="vacancy-company">{{company}}</div>
-        <div class="vacancy-city">{{city}}</div>
+    <!-- Верх: логотип, компания, город и дата -->
+    <div class="vacancy-header">
+      <div class="vacancy-header-left">
+        {{logoOrInitial}}
+        <div class="vacancy-info">
+          <div class="vacancy-company">{{company}}</div>
+          <div class="vacancy-city">{{city}}</div>
+        </div>
       </div>
+      <div class="vacancy-date">{{date}}</div>
     </div>
 
-    <!-- Правая часть -->
-    <div class="vacancy-right">
+    <div class="vacancy-details">
       <div class="vacancy-title">{{title}}</div>
       <div class="vacancy-salary">{{salary}}</div>
-      <div class="vacancy-date">{{date}}</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">{{grade}}</span>
+        <span class="tag {{formatClass}}">{{format}}</span>
+      </div>
     </div>
   </div>
 </a>

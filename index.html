@@ -1,106 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){
-      (m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],
-      k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-  ym(102624640, "init", {
-      clickmap:true,
-      trackLinks:true,
-      accurateTrackBounce:true,
-      webvisor:true
-  });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102624640" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Вакансии для дизайнеров</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Подключаем Inter -->
+
+    <!-- Шрифт Inter -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Yandex.Metrika counter -->
+
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="card.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="skeleton.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link rel="stylesheet" href="changelog.css" />
+
+    <!-- Yandex.Metrika -->
     <script type="text/javascript">
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){
-          (m[i].a=m[i].a||[]).push(arguments)};
-          m[i].l=1*new Date();
-          k=e.createElement(t),a=e.getElementsByTagName(t)[0],
-          k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+        k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
       ym(102624640, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true,
-          webvisor:true
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
       });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/102624640" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/102624640" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
   </head>
 
   <body>
-      <div class="page-wrapper">
-        <!-- ШАПКА -->
-        <header class="site-header">
-          <div class="site-header-left">
-            <img src="logos/logo.svg" alt="МЭТЧ" class="header-logo" />
-            <div class="header-description">
-              <p class="desc-title">все вакансии отбираю<br />вручную</p>
-            </div>
+    <div class="page-wrapper">
+      <!-- ХЕДЕР -->
+      <header class="site-header">
+        <div class="site-header-left">
+          <img src="logos/logo.svg" alt="МЭТЧ" class="header-logo" />
+          <div class="header-description">
+            <p class="desc-title">все вакансии отбираются<br />вручную</p>
           </div>
-          <div class="site-header-right">
-            <button class="add-vacancy-button" onclick="window.open('https://tally.so/r/3yrXo8', '_blank')">
-              Разместить вакансию
+        </div>
+
+        <div class="site-header-right">
+          <button class="add-vacancy-button" onclick="window.open('https://tally.so/r/3yrXo8', '_blank')">
+            Добавить вакансию
+          </button>
+
+          <div class="tooltip-container">
+            <button class="bell-button" onclick="toggleUpdates()">
+              <img src="logos/bell.svg" alt="Уведомления" class="bell-icon" />
             </button>
-            <div class="tooltip-container">
-              <button class="bell-button">
-                <img src="logos/bell.svg" alt="Уведомления" class="bell-icon" />
-              </button>
-              <div class="tooltip-new">
-                Обновлений пока нет.<br />
-                В будущем здесь будут важные новости по сайту.
-              </div>
-            </div>
-            <button class="burger-button" onclick="toggleMenu()">☰</button>
           </div>
-        </header>
 
-        <!-- МОБИЛЬНОЕ МЕНЮ -->
-        <nav id="mobile-menu" class="mobile-menu hidden">
-          <ul>
-            <li><a href="https://tally.so/r/3yrXo8" target="_blank">Разместить вакансию</a></li>
-          </ul>
-        </nav>  
+          <button class="burger-button" onclick="toggleMenu()">
+            <img src="logos/burger.svg" alt="Открыть меню" class="burger-icon burger-open" />
+            <img src="logos/close.svg" alt="Закрыть меню" class="burger-icon burger-close hidden" />
+          </button>
+        </div>
+      </header>
 
-        <!-- ОВЕРЛЕЙ -->
-        <div id="overlay" class="overlay hidden"></div>
+      <!-- МОДАЛКА ОБНОВЛЕНИЙ -->
+      <div id="updates-modal" class="updates-modal hidden">
+        <div class="updates-modal-inner">
+          <h2>Обновления</h2>
+          <div id="updates-list">
+            <p>Загрузка обновлений...</p>
+          </div>
+          <button class="modal-close" onclick="toggleUpdates()">Огонь 🔥</button>
+        </div>
+      </div>
 
-        <!-- ЗАГОЛОВОК -->
-        <h1>Вакансии для дизайнеров</h1>
+      <!-- МОБИЛЬНОЕ МЕНЮ -->
+      <nav id="mobile-menu" class="mobile-menu hidden">
+        <ul class="mobile-menu-list">
+          <li><a href="https://tally.so/r/3yrXo8" target="_blank">Добавить вакансию</a></li>
+          <li><a href="#about">О проекте</a></li>
+          <!-- добавь сюда другие пункты при необходимости -->
+        </ul>
+      </nav>
 
-<!-- СПИСОК ВАКАНСИЙ -->
-<div id="vacancies-list" class="vacancies-list">
+      <!-- ОВЕРЛЕЙ -->
+      <div id="overlay" class="overlay hidden"></div>
 
-</div>
+      <!-- ЗАГОЛОВОК -->
+      <h1>Вакансии для дизайнеров</h1>
+
+      <!-- СПИСОК ВАКАНСИЙ -->
+      <div id="vacancies-list" class="vacancies-list">
+        <!-- Сюда скрипт подставит карточки -->
+      </div>
 
       <!-- ФУТЕР -->
       <footer class="footer">
         <div class="footer-inner">
           <div class="footer-made">©2025 🇰🇿 Сделано в Казахстане</div>
-        <a class="footer-support" href="https://t.me/dmvdsgn" target="_blank">Предложить улучшение 🦄</a>
+          <a class="footer-support" href="https://t.me/dmvdsgn" target="_blank">Написать мне</a>
+        </div>
       </footer>
+    </div>
 
-    </div> <!-- /site-container -->
-
+    <!-- Скрипты -->
     <script src="main.js"></script>
+    <script src="updates.js"></script>
   </body>
 </html>

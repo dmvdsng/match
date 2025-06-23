@@ -1,0 +1,155 @@
+/* card.css — стили карточек вакансий */
+
+/* Сетка карточек */
+#vacancies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 24px 0;
+}
+
+/* Ссылка */
+.vacancy-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.vacancy-link:hover .vacancy-card {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Карточка */
+.vacancy-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  color: #1c1c1c;
+  box-sizing: border-box;
+  height: 100%;
+  gap: 16px;
+}
+
+/* Дата */
+.vacancy-date {
+  color: #999;
+  font-size: 15px;
+  font-weight: 500;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Верхняя часть: логотип + компания + город */
+.vacancy-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.vacancy-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-height: 50px;
+  
+}
+
+.vacancy-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.vacancy-logo-fallback {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #E0E0E0;
+  color: #1c1c1c;
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vacancy-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.vacancy-company {
+  font-size: 15px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.vacancy-city {
+  color: #999;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Основной блок: должность + зарплата */
+.vacancy-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vacancy-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.vacancy-salary {
+  font-size: 16px;
+  color: #1c1c1c;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Теги */
+.card-tags {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 13px;
+  font-weight: 500;
+  background: #f0f0f0;
+  color: #444;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Форматы работы */
+.tag-remote {
+  background: #d4f4d7;
+  color: #007d3c;
+}
+
+.tag-office {
+  background: #dceeff;
+  color: #1a73e8;
+}
+
+.tag-hybrid {
+  background: #f3e8fd;
+  color: #7e22ce;
+}
